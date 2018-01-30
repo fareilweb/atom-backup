@@ -1,0 +1,26 @@
+"*":
+  "atom-ide-ui":
+    use:
+      "atom-ide-diagnostics-ui": false
+  "atom-package-deps":
+    ignored: []
+  core:
+    telemetryConsent: "no"
+    themes: [
+      "atom-dark-ui"
+      "one-dark-syntax"
+    ]
+  "exception-reporting":
+    userId: "9ee3ec5e-c4cd-470f-8fa2-43217b740d2f"
+  "linter-ui-default":
+    panelHeight: 300
+  "php-integrator-autocomplete-plus": {}
+  "php-integrator-base":
+    core:
+      phpCommand: "D:\\xampp_php7\\php\\php.exe"
+  pigments: {}
+  "platformio-ide-terminal":
+    core:
+      shell: "C:\\Program Files\\Git\\bin\\bash.exe"
+  welcome:
+    showOnStartup: false
