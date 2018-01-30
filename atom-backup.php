@@ -85,7 +85,7 @@ class AtomBackup
     {
       $packages_array = file($this->backup_folder . DIRECTORY_SEPARATOR . "atom-package-list.txt");
 
-      foreach ($packages_array as $package_with_version) {
+      foreach ($packages_array as $package_name_with_version) {
           $at_pos = strpos($package_name_with_version, "@");
           $package_name = "";
           if($at_pos !== FALSE) {
