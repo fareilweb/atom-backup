@@ -93,9 +93,9 @@ class AtomBackup
           } else {
             $package_name = $package_name_with_version;
           }
-          $package_dir = $this->atom_dot_dir . DIRECTORY_SEPARATOR . $package_name;
+          $package_dir = $this->atom_dot_dir . DIRECTORY_SEPARATOR . "packages" . DIRECTORY_SEPARATOR . $package_name;
           if(!file_exists($package_dir)) {
-              shell_exec("apm install " . $package_name);
+              echo shell_exec("apm install " . $package_name);
           }
       }
 
