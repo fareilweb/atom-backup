@@ -1,10 +1,15 @@
 "*":
   "atom-ide-ui":
+    "atom-ide-console": {}
+    "atom-ide-datatip": {}
     use:
       "atom-ide-diagnostics-ui": false
   "atom-package-deps":
     ignored: []
   core:
+    disabledPackages: [
+      "php-integrator-autocomplete-plus"
+    ]
     telemetryConsent: "no"
     themes: [
       "atom-dark-ui"

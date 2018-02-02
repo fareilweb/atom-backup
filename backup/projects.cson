@@ -1,8 +1,8 @@
 [
   {
-    title: "Atom Backup"
+    title: "Learn Laravel Blog"
     paths: [
-      "C:\\Users\\lucac\\Desktop\\atom-backup"
+      "D:\\xampp_php7\\htdocs\\learn-laravel-blog"
     ]
     php:
       enabled: true
@@ -13,5 +13,11 @@
         fileExtensions: [
           "php"
         ]
+  }
+  {
+    title: "IriLoc"
+    paths: [
+      "D:\\xampp_php7\\htdocs\\iriloc.it"
+    ]
   }
 ]
