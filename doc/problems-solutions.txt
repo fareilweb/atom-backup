@@ -1,0 +1,3 @@
+# Can't install php-integrator-base/core
+To install manually use into "core" folder of the package (with you version instead of 3.2.0):
+php ./composer.phar create-project php-integrator/core ./3.2.0 3.2.0 --prefer-dist --no-dev
