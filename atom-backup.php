@@ -5,8 +5,9 @@ $atomBackup = new AtomBackup();
 // Elaborate Command Line Argoument
 if($argc === 1) {
   $atomBackup->printUsage();
-} else {
-
+} 
+else 
+{
   switch ($argv[1]) {
     case '--backup':
       $atomBackup->makeAtomBackup();
@@ -14,12 +15,16 @@ if($argc === 1) {
     case '--restore':
       $atomBackup->restoreAtomBackup();
       break;
+	case '--reinstall':
+		$arg = NULL;
+		if(isset($argv[2])){ $arg = $argv[2]; }
+		$atomBackup->reinstallPackages($arg);
+		break;
     default:
       // nothing...
       break;
   }
 }
-
 
 
 /**
@@ -51,12 +56,14 @@ class AtomBackup
 
   public function printUsage() {
     echo
-      "\n|----------- Atom Backup Usage -----------" .
+      "\n|-------------------- Atom Backup Usage --------------------" .
       "\n| - Make backup:" .
       "\n|     $ php atom-backup.php --backup" .
       "\n| - Restore backup:" .
       "\n|     $ php atom-backup.php --restore" .
-      "\n|-----------------------------------------\n";
+	  "\n| - Reinstall packages (can pass a file or will use default file location):" .
+      "\n|     $ php atom-backup.php --reinstall [packages-list-file]" .
+      "\n|-----------------------------------------------------------\n";
   }
 
 
@@ -80,10 +87,18 @@ class AtomBackup
 
   public function restoreAtomBackup()
   {
-    // Store Package List into a File
+	$this->reinstallPackages();
+	$this->restoreConfigurationFiles();
+  }
+  
+  
+  public function reinstallPackages($packageListFile="") 
+  {
+	// ReStore Package List into a File
     if(is_dir($this->atom_dot_dir))
     {
       $packages_array = file($this->backup_folder . DIRECTORY_SEPARATOR . "atom-package-list.txt");
+	  if($packageListFile!="") { $packages_array = $packageListFile; }
 
       foreach ($packages_array as $package_name_with_version) {
           $at_pos = strpos($package_name_with_version, "@");
@@ -102,12 +117,16 @@ class AtomBackup
     } else {
       echo ".atom folder does not exists\n";
     }
-
+  }
+  
+  
+  public function restoreConfigurationFiles() {
     // Restore a Copy of Important Configuration Files
     foreach ($this->atom_files as $file_name) {
       $source_file = $this->backup_folder . DIRECTORY_SEPARATOR . $file_name;
       $dest_file = $this->atom_dot_dir . DIRECTORY_SEPARATOR .  $file_name;
       copy($source_file, $dest_file);
-    }
+    } 
   }
+  
 }
