@@ -6,6 +6,10 @@
       "atom-ide-diagnostics-ui": false
   "atom-package-deps":
     ignored: []
+  "atom-ternjs":
+    inlineFnCompletionDocumentation: true
+  "bracket-matcher":
+    highlightMatchingLineNumber: true
   core:
     disabledPackages: [
       "php-integrator-autocomplete-plus"
@@ -15,17 +19,33 @@
       "atom-dark-ui"
       "one-dark-syntax"
     ]
+  editor:
+    invisibles: {}
+    scrollPastEnd: true
+    showIndentGuide: true
+  emmet: {}
   "exception-reporting":
     userId: "9ee3ec5e-c4cd-470f-8fa2-43217b740d2f"
   "linter-ui-default":
     panelHeight: 300
+  livereload:
+    applyImageLive: true
   "php-integrator-autocomplete-plus": {}
   "php-integrator-base":
     core:
       phpCommand: "D:\\xampp_php7\\php\\php.exe"
-  pigments: {}
+  pigments:
+    autocompleteSuggestionsFromValue: true
+    extendAutocompleteToColorValue: true
   "platformio-ide-terminal":
     core:
       shell: "C:\\Program Files\\Git\\bin\\bash.exe"
+  "remote-ftp":
+    connector:
+      autoUploadOnSave: "only when connected"
+    notifications:
+      enableTransfer: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
