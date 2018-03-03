@@ -11,18 +11,17 @@
   "bracket-matcher":
     highlightMatchingLineNumber: true
   core:
-    disabledPackages: [
-      "php-integrator-autocomplete-plus"
-    ]
     telemetryConsent: "no"
     themes: [
       "atom-dark-ui"
-      "one-dark-syntax"
+      "atom-dark-syntax"
     ]
   editor:
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
+    tabLength: 4
+    tabType: "soft"
   emmet: {}
   "exception-reporting":
     userId: "9ee3ec5e-c4cd-470f-8fa2-43217b740d2f"
@@ -30,6 +29,13 @@
     panelHeight: 300
   livereload:
     applyImageLive: true
+  minimap:
+    plugins:
+      pigments: true
+      pigmentsDecorationsZIndex: 0
+  "php-debug":
+    currentPanelHeight: "206px"
+    currentPanelMode: "bottom"
   "php-integrator-autocomplete-plus": {}
   "php-integrator-base":
     core:
@@ -45,7 +51,12 @@
       autoUploadOnSave: "only when connected"
     notifications:
       enableTransfer: true
+  "todo-show":
+    sortBy: "Path"
   "tree-view":
     hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
+".editorconfig.source":
+  editor:
+    tabLength: 4
