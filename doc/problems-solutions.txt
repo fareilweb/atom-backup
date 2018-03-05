@@ -1,3 +1,7 @@
-# Can't install php-integrator-base/core
-To install manually use into "core" folder of the package (with your version instead of 3.2.0):
-php ./composer.phar create-project php-integrator/core ./3.2.0 3.2.0 --prefer-dist --no-dev
+# PROBLEM -> Can't install php-integrator-base/core
+|___ To install manually use into "core" folder of the package (with you version instead of 3.2.0):
+|___$ php ./composer.phar create-project php-integrator/core ./3.2.0 3.2.0 --prefer-dist --no-dev
+
+# PROBLEM -> Store and reinstall atom packages list
+|___ STORE 		_ $ apm list --installed --bare > packages.list
+|___ REINSTALL	_ $ apm install --packages-file packages.list
