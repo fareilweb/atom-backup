@@ -3,7 +3,7 @@
     "atom-ide-console": {}
     "atom-ide-datatip": {}
     use:
-      "atom-ide-diagnostics-ui": false
+      "atom-ide-diagnostics-ui": "never"
   "atom-package-deps":
     ignored: []
   "atom-ternjs":
@@ -11,11 +11,19 @@
   "bracket-matcher":
     highlightMatchingLineNumber: true
   core:
+    disabledPackages: [
+      "atom-live-server"
+      "code-peek"
+      "editorconfig"
+      "php-integrator-annotations"
+      "php-integrator-refactoring"
+    ]
     telemetryConsent: "no"
     themes: [
       "atom-dark-ui"
       "atom-dark-syntax"
     ]
+    uriHandlerRegistration: "always"
   editor:
     invisibles: {}
     scrollPastEnd: true
@@ -26,9 +34,10 @@
   "exception-reporting":
     userId: "9ee3ec5e-c4cd-470f-8fa2-43217b740d2f"
   "linter-ui-default":
-    panelHeight: 300
+    panelHeight: 124
   livereload:
     applyImageLive: true
+    delayForUpdate: 2000
   minimap:
     plugins:
       pigments: true
@@ -36,6 +45,8 @@
   "php-debug":
     currentPanelHeight: "206px"
     currentPanelMode: "bottom"
+    showWelcome: false
+    xdebug: {}
   "php-integrator-autocomplete-plus": {}
   "php-integrator-base":
     core:
@@ -47,10 +58,10 @@
     core:
       shell: "C:\\Program Files\\Git\\bin\\bash.exe"
   "remote-ftp":
-    connector:
-      autoUploadOnSave: "only when connected"
+    connector: {}
     notifications:
       enableTransfer: true
+      enableWatchFileChange: true
   "todo-show":
     sortBy: "Path"
   "tree-view":
